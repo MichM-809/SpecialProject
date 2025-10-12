@@ -1,0 +1,40 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  margin: 20px;
+  padding: 20px;
+  font-family: "Kantumruy Pro", sans-serif;
+  font-size: 22px;
+  color: black;
+  background-color: #FFA07A;
+  text-align: center;
+}
+
+div {
+  width: 300px;
+  padding: 50px;
+  margin: 20px;
+  background-color: white;
+  border-width: 20px;
+  border: black;
+}
+
+.button {
+  border: none; 
+  color: black; 
+  padding: 14px 28px; 
+  cursor: pointer; 
+}
+
+.nature {background-color:  #2E8B57;} /* Green */
+.nature:hover {background-color: green;}
+
+
+.cloth {background-color: #DC143C;}
+.cloth:hover{background-color: red;}
+
+.food {background-color: bisque;}
+.food:hover{background-color: beige;}
