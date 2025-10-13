@@ -33,14 +33,16 @@ foodBut.addEventListener('click', () => {
     NatMatchBut.style.display= 'none';
     flashBox.style.display= 'none';
     matchBox.style.display= 'none';
-
-
 });
 
 FoodFlashBut.addEventListener('click', () => {
     screen= 4;
     flashBox.style.display= 'block';
     matchBox.style.display= 'none';
+    let flashcard= document.getElementsById(".flip-box");
+    flashcard.style.visiblity= "visible";
+
+    
 });
 
 FoodMatchBut.addEventListener('click', () => {
@@ -66,15 +68,15 @@ clothBut.addEventListener('click', () => {
     NatMatchBut.style.display= 'none';
     flashBox.style.display= 'none';
     matchBox.style.display= 'none';
-
-
 })
+
 ClothFlashBut.addEventListener('click', () => {
     screen= 6;
     flashBox.style.display= 'block';
     matchBox.style.display= 'none';
 
 });
+
 ClothMatchBut.addEventListener('click', () => {
     screen= 7;
     flashBox.style.display= 'none';
