@@ -25,8 +25,10 @@ let natMatchBut= document.querySelector('.button.match-nat');
 
 bodyBut.addEventListener('click', () => {
     screen= 1;
-    bodyFlashBut.style.display= 'block';
-    bodyMatchBut.style.display= 'block';
+    bodyFlashBut.style.display= 'inline-block';
+    bodyMatchBut.style.display= 'inline-block';
+    
+
 
     element.style.display= 'none';
     element1.style.display= 'none';
@@ -57,8 +59,8 @@ bodyMatchBut.addEventListener('click', () => {
 
 clothBut.addEventListener('click', () => {
     screen= 2
-    clothFlashBut.style.display= 'block';
-    clothMatchBut.style.display= 'block';
+    clothFlashBut.style.display= 'inline-block';
+    clothMatchBut.style.display= 'inline-block';
 
     element.style.display= 'none';
     element1.style.display= 'none';
@@ -89,8 +91,8 @@ clothMatchBut.addEventListener('click', () => {
 
 natBut.addEventListener('click', () => {
     screen= 3
-    natFlashBut.style.display= 'block';
-    natMatchBut.style.display= 'block';
+    natFlashBut.style.display= 'inline-block';
+    natMatchBut.style.display= 'inline-block';
 
     element.style.display= 'none';
     element1.style.display= 'none';
