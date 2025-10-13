@@ -1,3 +1,7 @@
+//WHAT TO DO: make flash cards and add info to them
+
+
+
 let screen = 0;
 
 let element = document.getElementById('Text');
@@ -5,47 +9,44 @@ let element1 = document.getElementById('Text1');
 let flashBox= document.getElementById('flashBox');
 let matchBox= document.getElementById('matchBox');
 
-let foodBut= document.querySelector('.button.food');
-let FoodFlashBut= document.querySelector('.button.flashFood');
-let FoodMatchBut= document.querySelector('.button.matchFood');
+let bodyBut= document.querySelector('.button.body');
+let bodyFlashBut= document.querySelector('.button.flash-body');
+let bodyMatchBut= document.querySelector('.button.match-body');
 
 let clothBut= document.querySelector('.button.cloth');
-let ClothFlashBut= document.querySelector('.button.flashCloth');
-let ClothMatchBut= document.querySelector('.button.matchCloth');
+let clothFlashBut= document.querySelector('.button.flash-cloth');
+let clothMatchBut= document.querySelector('.button.match-cloth');
 
 let natBut= document.querySelector('.button.nature');
-let NatFlashBut= document.querySelector('.button.flashNat');
-let NatMatchBut= document.querySelector('.button.matchNat');
+let natFlashBut= document.querySelector('.button.flash-nat');
+let natMatchBut= document.querySelector('.button.match-nat');
 
 //Food Category
 
-foodBut.addEventListener('click', () => {
+bodyBut.addEventListener('click', () => {
     screen= 1;
-    FoodFlashBut.style.display= 'block';
-    FoodMatchBut.style.display= 'block';
+    bodyFlashBut.style.display= 'block';
+    bodyMatchBut.style.display= 'block';
 
     element.style.display= 'none';
     element1.style.display= 'none';
 
-    ClothFlashBut.style.display= 'none';
-    ClothMatchBut.style.display= 'none';
-    NatFlashBut.style.display= 'none';
-    NatMatchBut.style.display= 'none';
+    clothFlashBut.style.display= 'none';
+    clothMatchBut.style.display= 'none';
+    natFlashBut.style.display= 'none';
+    natMatchBut.style.display= 'none';
     flashBox.style.display= 'none';
     matchBox.style.display= 'none';
 });
 
-FoodFlashBut.addEventListener('click', () => {
+bodyFlashBut.addEventListener('click', () => {
     screen= 4;
     flashBox.style.display= 'block';
     matchBox.style.display= 'none';
-    let flashcard= document.getElementsById(".flip-box");
-    flashcard.style.visiblity= "visible";
 
-    
 });
 
-FoodMatchBut.addEventListener('click', () => {
+bodyMatchBut.addEventListener('click', () => {
     screen= 5;
     flashBox.style.display= 'none';
     matchBox.style.display= 'block';
@@ -56,28 +57,28 @@ FoodMatchBut.addEventListener('click', () => {
 
 clothBut.addEventListener('click', () => {
     screen= 2
-    ClothFlashBut.style.display= 'block';
-    ClothMatchBut.style.display= 'block';
+    clothFlashBut.style.display= 'block';
+    clothMatchBut.style.display= 'block';
 
     element.style.display= 'none';
     element1.style.display= 'none';
 
-    FoodFlashBut.style.display= 'none';
-    FoodMatchBut.style.display= 'none';
-    NatFlashBut.style.display= 'none';
-    NatMatchBut.style.display= 'none';
+    bodyFlashBut.style.display= 'none';
+    bodyMatchBut.style.display= 'none';
+    natFlashBut.style.display= 'none';
+    natMatchBut.style.display= 'none';
     flashBox.style.display= 'none';
     matchBox.style.display= 'none';
 })
 
-ClothFlashBut.addEventListener('click', () => {
+clothFlashBut.addEventListener('click', () => {
     screen= 6;
     flashBox.style.display= 'block';
     matchBox.style.display= 'none';
 
 });
 
-ClothMatchBut.addEventListener('click', () => {
+clothMatchBut.addEventListener('click', () => {
     screen= 7;
     flashBox.style.display= 'none';
     matchBox.style.display= 'block';
@@ -88,27 +89,27 @@ ClothMatchBut.addEventListener('click', () => {
 
 natBut.addEventListener('click', () => {
     screen= 3
-    NatFlashBut.style.display= 'block';
-    NatMatchBut.style.display= 'block';
+    natFlashBut.style.display= 'block';
+    natMatchBut.style.display= 'block';
 
     element.style.display= 'none';
     element1.style.display= 'none';
 
-    FoodFlashBut.style.display= 'none';
-    FoodMatchBut.style.display= 'none';
-    ClothFlashBut.style.display= 'none';
-    ClothMatchBut.style.display= 'none';
+    bodyFlashBut.style.display= 'none';
+    bodyMatchBut.style.display= 'none';
+    clothFlashBut.style.display= 'none';
+    clothMatchBut.style.display= 'none';
     flashBox.style.display= 'none';
     matchBox.style.display= 'none';
 })
 
-NatFlashBut.addEventListener('click', () => {
+natFlashBut.addEventListener('click', () => {
     screen= 8;
     flashBox.style.display= 'block';
     matchBox.style.display= 'none';
 });
 
-NatMatchBut.addEventListener('click', () => {
+natMatchBut.addEventListener('click', () => {
     screen= 9;
     flashBox.style.display= 'none';
     matchBox.style.display= 'block';

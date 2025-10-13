@@ -45,8 +45,8 @@ div {
 .cloth {background-color: #DC143C;}
 .cloth:hover{background-color: red;}
 
-.food {background-color: bisque;}
-.food:hover{background-color: beige;}
+.body {background-color: bisque;}
+.body:hover{background-color: beige;}
 
 
 .flip-box {
@@ -55,7 +55,6 @@ div {
   height: 200px;
   border: 1px solid #f1f1f1;
   perspective: 1000px;
-  visibility: hidden;
 }
 
 .flip-inner {
