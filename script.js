@@ -1,5 +1,5 @@
 //WHAT TO DO: make flash cards and add info to them
-let screen = 0;
+var screen = 0
 
 let element = document.getElementById('Text');
 let element1 = document.getElementById('Text1');
@@ -23,13 +23,11 @@ let natFlashBut= document.querySelector('.button.flash-nat');
 let natMatchBut= document.querySelector('.button.match-nat');
 
 //Flash cards
-let saveBut= document.getElementById('.button.save-card');
 
 
 //Body Category
 
 bodyBut.addEventListener('click', () => {
-    screen= 1;
     bodyFlashBut.style.display= 'inline-block';
     bodyMatchBut.style.display= 'inline-block';
     backBut.style.display= 'inline-block';
@@ -43,17 +41,17 @@ bodyBut.addEventListener('click', () => {
     natMatchBut.style.display= 'none';
     flashBox.style.display= 'none';
     matchBox.style.display= 'none';
+
+    screen= 1
 });
 
 bodyFlashBut.addEventListener('click', () => {
-    screen= 4;
     flashBox.style.display= 'block';
     matchBox.style.display= 'none';
 
 });
 
 bodyMatchBut.addEventListener('click', () => {
-    screen= 5;
     flashBox.style.display= 'none';
     matchBox.style.display= 'block';
 });
@@ -62,7 +60,6 @@ bodyMatchBut.addEventListener('click', () => {
 //Clothes Category
 
 clothBut.addEventListener('click', () => {
-    screen= 2
     clothFlashBut.style.display= 'inline-block';
     clothMatchBut.style.display= 'inline-block';
     backBut.style.display= 'inline-block';
@@ -76,17 +73,17 @@ clothBut.addEventListener('click', () => {
     natMatchBut.style.display= 'none';
     flashBox.style.display= 'none';
     matchBox.style.display= 'none';
+
+    screen= 2
 })
 
 clothFlashBut.addEventListener('click', () => {
-    screen= 6;
     flashBox.style.display= 'block';
     matchBox.style.display= 'none';
 
 });
 
 clothMatchBut.addEventListener('click', () => {
-    screen= 7;
     flashBox.style.display= 'none';
     matchBox.style.display= 'block';
 });
@@ -95,7 +92,6 @@ clothMatchBut.addEventListener('click', () => {
 //Nature Category
 
 natBut.addEventListener('click', () => {
-    screen= 3
     natFlashBut.style.display= 'inline-block';
     natMatchBut.style.display= 'inline-block';
     backBut.style.display= 'inline-block';
@@ -109,16 +105,16 @@ natBut.addEventListener('click', () => {
     clothMatchBut.style.display= 'none';
     flashBox.style.display= 'none';
     matchBox.style.display= 'none';
+
+    screen= 3
 })
 
 natFlashBut.addEventListener('click', () => {
-    screen= 8;
     flashBox.style.display= 'block';
     matchBox.style.display= 'none';
 });
 
 natMatchBut.addEventListener('click', () => {
-    screen= 9;
     flashBox.style.display= 'none';
     matchBox.style.display= 'block';
 });
@@ -126,7 +122,6 @@ natMatchBut.addEventListener('click', () => {
 
 //Back Button
 backBut.addEventListener('click', () => {
-    screen= 0
     bodyFlashBut.style.display= 'none';
     bodyMatchBut.style.display= 'none';
     clothFlashBut.style.display= 'none';
@@ -139,39 +134,97 @@ backBut.addEventListener('click', () => {
     clothBut.style.display= 'inline-block';
     natBut.style.display= 'inline-block';
     backBut.style.display= 'none';
+
+    screen= 0
 })
 
 //flashcards
+
 let flashcards= document.getElementById('flashcards');
-let flashcardInfo= [
-    {front: 'Manzanas', Back: 'Apples'},
-    {front: 'Cueva', Back: 'Cave'},
-    {front: 'Cabeza', Back: 'Head'},
+let bodyflashcard= [
+    {front: 'Ojos', back: 'Eyes'},
+    {front: 'Boca', back: 'Mouth'},
+    {front: 'Cabeza', back: 'Head'},
 ];
 
-function getFlashcards() {
+let clothflashcard= [
+    {front: 'Ropa', back: 'Clothes'},
+    {front: 'Zapatos', back: 'Shoes'},
+    {front: 'Camiseta', back: 'T-Shirt'},
+];
 
-};
+let natflashcard= [
+    {front: 'Laguna', back: 'Lagoon'},
+    {front: 'Cueva', back: 'Cave'},
+    {front: 'Isla', back: 'Island'},
+];
+ 
+let Front = true;
+var currentIndex= 0
+
+//let currentCard;
+
+/*
+if (screen ==1){
+    currentCard = bodyflashcard[currentIndex];
+} else if (screen== 2) {
+    currentCard = clothflashcard[currentIndex];
+}else if (screen== 3){
+    currentCard = natflashcard[currentIndex];
+}
+    */
+
+
+
+flashcards.addEventListener('click', () => {
+
+    let currentCard;
+
+    if (screen ==1){
+        currentCard = bodyflashcard[currentIndex];
+    } else if (screen== 2) {
+        currentCard = clothflashcard[currentIndex];
+    }else if (screen== 3){
+        currentCard = natflashcard[currentIndex];
+    }
+
+  let word = document.getElementById('word');
+  if (Front) {
+    word.textContent = currentCard.front;
+  } else {
+    word.textContent = currentCard.back;
+  }
+
+  Front = !Front; // toggle between front and back
+});
+
+sortFlashcards();
+
 
 function sortFlashcards() {
     let knowBut= document.querySelector('.button.know');
     let dontBut= document.querySelector('.button.dont-know');
 
+    
     knowBut.addEventListener('click', () => {
         //store card in know pile and move onto next card
+        currentIndex+= 1
 
 
     });
 
-    knowBut.addEventListener('click', () => {
+    dontBut.addEventListener('click', () => {
         //store card in dontknow pile and move onto next card
+        currentIndex+= 1
 
 
     });
 
 
-    //at the end, show know and dont know pile
 };
+
+ //at the end, show know and dont know pile
+
 
 
 
