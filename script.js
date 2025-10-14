@@ -142,43 +142,38 @@ backBut.addEventListener('click', () => {
 })
 
 //flashcards
+let flashcards= document.getElementById('flashcards');
+let flashcardInfo= [
+    {front: 'Manzanas', Back: 'Apples'},
+    {front: 'Cueva', Back: 'Cave'},
+    {front: 'Cabeza', Back: 'Head'},
+];
 
-saveBut.addEventListener('click', () => {
+function getFlashcards() {
 
-    const question= document.getElementById('question').value;
-    const answer= document.getElementById('answer').value;
+};
 
-    if (question&&answer) {
-        const flashcardDiv= document.createElement('div');
-        flashcardDiv.classList.add('flashcard');
-        
-        const cardInner= document.createElement('div');
-        cardInner.classList.add('card-inner');
+function sortFlashcards() {
+    let knowBut= document.querySelector('.button.know');
+    let dontBut= document.querySelector('.button.dont-know');
 
-        const cardFront= document.createElement('div');
-        cardFront.classList.add('card-front');
-
-        cardFront.textContent= question;
-
-        const cardBack= document.createElement('div');
-        cardBack.classList.add('card-back');
-        cardBack.textContent= answer;
-
-        cardInner.appendChild(cardFront);
-        cardInner.appendChild(cardBack);
+    knowBut.addEventListener('click', () => {
+        //store card in know pile and move onto next card
 
 
-        flashcardDiv.appendChild(cardInner);
+    });
 
-        flashcardDiv.addEventListener('click', () => {
-            flashcardDiv.classList.toggle('flipped');
-        });
+    knowBut.addEventListener('click', () => {
+        //store card in dontknow pile and move onto next card
 
-        document.getElementById('flashcard-container').appendChild(flashcardDiv);
 
-    }
+    });
 
-});
+
+    //at the end, show know and dont know pile
+};
+
+
 
 
 
