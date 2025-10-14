@@ -81,7 +81,7 @@ div {
   transform-style: preserve-3d;
 }
 
-.flashcard.flipped .card-inner{
+.flashcard.flipped.card-inner{
   transform: rotateY(180deg);
 }
 
