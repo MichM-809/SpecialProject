@@ -160,19 +160,12 @@ let natflashcard= [
 ];
  
 let Front = true;
-var currentIndex= 0
+var currentIndex1= 0
+var currentIndex2= 0
+var currentIndex3= 0
+
 
 //let currentCard;
-
-/*
-if (screen ==1){
-    currentCard = bodyflashcard[currentIndex];
-} else if (screen== 2) {
-    currentCard = clothflashcard[currentIndex];
-}else if (screen== 3){
-    currentCard = natflashcard[currentIndex];
-}
-    */
 
 
 
@@ -181,11 +174,11 @@ flashcards.addEventListener('click', () => {
     let currentCard;
 
     if (screen ==1){
-        currentCard = bodyflashcard[currentIndex];
+        currentCard = bodyflashcard[currentIndex1];
     } else if (screen== 2) {
-        currentCard = clothflashcard[currentIndex];
+        currentCard = clothflashcard[currentIndex2];
     }else if (screen== 3){
-        currentCard = natflashcard[currentIndex];
+        currentCard = natflashcard[currentIndex3];
     }
 
   let word = document.getElementById('word');
@@ -208,8 +201,16 @@ function sortFlashcards() {
     
     knowBut.addEventListener('click', () => {
         //store card in know pile and move onto next card
-        currentIndex+= 1
-
+        if (screen ==1){
+        currentCard = bodyflashcard[currentIndex1];
+        currentIndex1+= 1
+    } else if (screen== 2) {
+        currentCard = clothflashcard[currentIndex2];
+        currentIndex2+= 1
+    }else if (screen== 3){
+        currentCard = natflashcard[currentIndex3];
+        currentIndex3+= 1
+    }
 
     });
 
@@ -217,13 +218,49 @@ function sortFlashcards() {
         //store card in dontknow pile and move onto next card
         currentIndex+= 1
 
-
     });
 
 
 };
 
  //at the end, show know and dont know pile
+
+ //Picture guess
+
+ let images= [
+  { src: "https://www.w3schools.com/howto/img_nature_wide.jpg", answer: "bosque"}
+
+ ]
+
+ let currentImage= 0
+
+ let pic = document.getElementById('mysteryImage');
+ let feedback = document.getElementById('feedback');
+ let correct = images[currentImage].answer;
+ let guess= document.getElementById('answer')
+ let saveBut= document.getElementById('.button.enter')
+
+  image.src = images[index].src;
+  feedback.textContent = "";
+
+  saveBut.addEventListener('click',() =>{
+
+    if(guess == answer) {
+    feedback.textContent= "Correct"
+  } else{
+     feedback.textContent= "Incorrect"
+  }
+
+
+  })
+
+  
+ 
+  
+
+
+
+
 
 
 

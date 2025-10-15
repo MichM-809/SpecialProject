@@ -16,24 +16,31 @@
     <button class="button nature">Nature Vocab</button>
     
     <button class="button flash-body" style="display:none">Flash Cards: Body</button>
-    <button class="button match-body" style="display:none">Match Word To Picture: Body</button>
+    <button class="button match-body" style="display:none">Picture Guess: Body</button>
 
     <button class="button flash-cloth" style="display:none">Flash Cards: Clothes</button>
-    <button class="button match-cloth" style="display:none">Match Word To Picture: Clothes</button>
+    <button class="button match-cloth" style="display:none">Picture Guess: Clothes</button>
 
     <button class="button flash-nat" style="display:none">Flash Cards: Nature</button>
-    <button class="button match-nat" style="display:none">Match Word To Picture: Nature</button>
+    <button class="button match-nat" style="display:none">Picture Guess: Nature</button>
     <button class="button back" style="display:none">Go Back</button>
 
 
 
-    <div id="matchBox" style="display:none"></div>
+    <div id="matchBox" style="display:none">
+        <p id="Heading">Picture Guess</p>
+        <img id="Image" src="" style="width:100%">
+    <textarea id="answer"></textarea>
+    <button id="button enter">Enter</button>
+    <p id="feedback"></p>
+
+    </div>
 
 
 
 
     <div id="flashBox" style="display:none">
-        
+        <p id= "Heading">Flashcards</p>
         <div id="flashcards">
             <p id="word"></p>
         </div>
