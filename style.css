@@ -34,7 +34,7 @@ div {
 }
 
 #flashcards{
-  width: 100px;
+  width: 150px;
   height: 100px;
   background-color: white;
 }
@@ -70,3 +70,6 @@ div {
 
 .know:hover{background-color: gray;}
 .dont-know:hover{background-color: gray;}
+
+
+/* Pictures*/

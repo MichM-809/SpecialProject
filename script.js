@@ -142,21 +142,107 @@ backBut.addEventListener('click', () => {
 
 let flashcards= document.getElementById('flashcards');
 let bodyflashcard= [
-    {front: 'Ojos', back: 'Eyes'},
-    {front: 'Boca', back: 'Mouth'},
-    {front: 'Cabeza', back: 'Head'},
+    {front: 'el ojo', back: 'eye'},
+    {front: 'la boca', back: 'mouth'},
+    {front: 'la cabeza', back: 'head'},
+    {front: 'el brazo', back: 'arm'},
+    {front: 'el dedo', back: 'finger'},
+    {front: 'la espalda', back: 'back'},
+    {front: 'los hombros', back: 'shoulders'},
+    {front: 'la nariz', back: 'nose'},
+    {front: 'la mano', back: 'hand'},
+    {front: 'la oreja/el oido', back: 'ear/inner ear'},
+    {front: 'el pie', back: 'foot'},
+    {front: 'la pierna', back: 'leg'},
+    {front: 'la rodilla', back: 'knee'},
+    {front: 'la ceja', back: 'eyebrow'},
+    {front: 'la mejilla', back: 'cheek'},
+    {front: 'el menton/la barbilla', back: 'chin'},
+    {front: 'el pecho', back: 'chest'},
+    {front: 'la muneca', back: 'wrist'},
+    {front: 'la palma', back: 'palm'},
+    {front: 'la frente', back: 'forehead'},
+    {front: 'los labios', back: 'lips'},
+    {front: 'el cuello', back: 'neck'},
+    {front: 'el muslo', back: 'thigh'},
+    {front: 'el codo', back: 'elbow'},
+    {front: 'la cadera', back: 'hip'},
+    {front: 'la nalga', back: 'butt'},
+    {front: 'el tobillo', back: 'ankle'},
+    {front: 'la pantorrilla', back: 'calf'},
+    {front: 'el pulgar', back: 'thumb'},
+    {front: 'el antebrazo', back: 'forearm'},
 ];
 
 let clothflashcard= [
-    {front: 'Ropa', back: 'Clothes'},
-    {front: 'Zapatos', back: 'Shoes'},
-    {front: 'Camiseta', back: 'T-Shirt'},
+    {front: 'la ropa', back: 'clothes'},
+    {front: 'los zapatos', back: 'shoes'},
+    {front: 'la camiseta', back: 't-shirt'},
+    {front: 'el abrigo', back: 'coat'},
+    {front: 'la bolsa', back: 'purse'},
+    {front: 'las botas', back: 'boots'},
+    {front: 'los calcetines', back: 'socks'},
+    {front: 'la camisa', back: 'shirt'},
+    {front: 'las chancletas', back: 'flip flops'},
+    {front: 'el cinturon', back: 'belt'},
+    {front: 'la corbata', back: 'tie'},
+    {front: 'vestirse (e:i)', back: 'to get dressed'},
+    {front: 'los vaqueros', back: 'jeans'},
+    {front: 'vender', back: 'to sell'},
+    {front: 'el traje', back: 'suit'},
+    {front: 'la sudadera', back: 'sweatshirt'},
+    {front: 'el sueter', back: 'sweater'},
+    {front: 'las sandalias', back: 'sandals'},
+    {front: 'probarse(o:ue)', back: 'to try on'},
+    {front: 'los panatalones cortos', back: 'shorts'},
+    {front: 'llevar', back: 'to wear'},
+    {front: 'el traje de bano', back: 'bathing suit'},
+    {front: 'quedar(me, te, le) bien/mal', back: 'to fit(well/poorly'},
+    {front: 'la prenda', back: 'article of clothing'},
+    {front: 'los pantalones de trekking', back: 'hiking pants'},
+    {front: 'la ropa (ligera/liviana', back: 'lightweight clothing'},
+    {front: 'el impermeable', back: 'raincoat'},
 ];
 
 let natflashcard= [
-    {front: 'Laguna', back: 'Lagoon'},
-    {front: 'Cueva', back: 'Cave'},
-    {front: 'Isla', back: 'Island'},
+    {front: 'la laguna', back: 'lagoon'},
+    {front: 'la cueva', back: 'cave'},
+    {front: 'la isla', back: 'island'},
+    {front: 'la avalancha de nieve', back: 'avalanche'},
+    {front: 'el canon', back: 'canyon'},
+    {front: 'el cerro', back: 'hill'},
+    {front: 'el ciclon', back: 'cyclone/tornado'},
+    {front: 'la cordillera', back: 'mountain range'},
+    {front: 'la costa', back: 'coast'},
+    {front: 'el desierto', back: 'desert'},
+    {front: 'la erupcion volcanica', back: 'volcanic eruption'},
+    {front: 'el norte', back: 'north'},
+    {front: 'el este', back: 'east'},
+    {front: 'el sur', back: 'south'},
+    {front: 'el oeste', back: 'west'},
+    {front: 'el noreste', back: 'northeste'}, 
+    {front: 'el noroeste', back: 'northwest'},
+    {front: 'el sureste', back: 'southeast'},
+    {front: 'el suroeste', back: 'southwest'},
+    {front: 'el huracan', back: 'hurricane'},
+    {front: 'el incendio forest', back: 'forest fire'},
+    {front: 'la inundacion', back: 'flood'},
+    {front: 'el lago', back: 'lake'},
+    {front: 'los llanos', back: 'plains'},
+    {front: 'el mar', back: 'sea'},
+    {front: 'el maremoto', back: 'tsunami'},
+    {front: 'la montana', back: 'mountain'},
+    {front: 'el oceano', back: 'ocean'},
+    {front: 'los relampagos', back: 'lightning'},
+    {front: 'el rio', back: 'river'},
+    {front: 'la selva', back: 'jungle'},
+    {front: 'la sequia', back: 'drought'},
+    {front: 'el terremoto', back: 'earthquake'},
+    {front: 'la tormenta', back: 'storm'},
+    {front: 'los truenos', back: 'thunder'},
+    {front: 'el valle', back: 'valley'},
+    {front: 'el volcan', back: 'volcano'},
+    {front: 'la pradera', back: 'meadow/grassland'},
 ];
  
 let Front = true;
@@ -228,28 +314,33 @@ function sortFlashcards() {
  //Picture guess
 
  let images= [
-  { src: "https://www.w3schools.com/howto/img_nature_wide.jpg", answer: "bosque"}
+  { src: "https://www.w3schools.com/howto/img_nature_wide.jpg", answer: "bosque"},
+
+
 
  ]
 
  let currentImage= 0
 
- let pic = document.getElementById('mysteryImage');
+ let pic = document.getElementById('Image');
  let feedback = document.getElementById('feedback');
- let correct = images[currentImage].answer;
+ 
  let guess= document.getElementById('answer')
  let saveBut= document.getElementById('.button.enter')
 
-  image.src = images[index].src;
-  feedback.textContent = "";
+  pic.src = images[currentImage].src;
+  //feedback.textContent = '';
 
   saveBut.addEventListener('click',() =>{
+    let correct = images[currentImage].answer;
 
-    if(guess == answer) {
+    if(guess.value.toLowerCase() == correct.toLowerCase()) {
     feedback.textContent= "Correct"
   } else{
      feedback.textContent= "Incorrect"
   }
+
+  currentImage += 1
 
 
   })
