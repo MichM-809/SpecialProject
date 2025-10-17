@@ -71,5 +71,12 @@ div {
 .know:hover{background-color: gray;}
 .dont-know:hover{background-color: gray;}
 
+.enter{
+  padding: 5px 10px; 
+  background-color: rgb(142, 141, 141);
+}
+.enter:hover{background-color: rgb(174, 170, 170);}
+
+
 
 /* Pictures*/

@@ -135,17 +135,35 @@ backBut.addEventListener('click', () => {
     natBut.style.display= 'inline-block';
     backBut.style.display= 'none';
 
+    word.textContent= ''
+    end.textContent= ''
+    currentIndex1= 0
+    currentIndex2= 0
+    currentIndex3= 0
+    currentCard=0
+    flashcards.style.display= 'block'
+    knowNat = 0
+    knowCloth= 0
+    knowBod= 0
+    DknowNat = 0
+    DknowCloth= 0
+    DknowBod= 0
+
+    knowPile= []
+    DknowPile= []
+
     screen= 0
 })
 
 //flashcards
 
 let flashcards= document.getElementById('flashcards');
+
 let bodyflashcard= [
     {front: 'el ojo', back: 'eye'},
     {front: 'la boca', back: 'mouth'},
     {front: 'la cabeza', back: 'head'},
-    {front: 'el brazo', back: 'arm'},
+    /*{front: 'el brazo', back: 'arm'},
     {front: 'el dedo', back: 'finger'},
     {front: 'la espalda', back: 'back'},
     {front: 'los hombros', back: 'shoulders'},
@@ -171,14 +189,14 @@ let bodyflashcard= [
     {front: 'el tobillo', back: 'ankle'},
     {front: 'la pantorrilla', back: 'calf'},
     {front: 'el pulgar', back: 'thumb'},
-    {front: 'el antebrazo', back: 'forearm'},
+    {front: 'el antebrazo', back: 'forearm'}, */
 ];
 
 let clothflashcard= [
     {front: 'la ropa', back: 'clothes'},
     {front: 'los zapatos', back: 'shoes'},
     {front: 'la camiseta', back: 't-shirt'},
-    {front: 'el abrigo', back: 'coat'},
+  /*  {front: 'el abrigo', back: 'coat'},
     {front: 'la bolsa', back: 'purse'},
     {front: 'las botas', back: 'boots'},
     {front: 'los calcetines', back: 'socks'},
@@ -201,14 +219,14 @@ let clothflashcard= [
     {front: 'la prenda', back: 'article of clothing'},
     {front: 'los pantalones de trekking', back: 'hiking pants'},
     {front: 'la ropa (ligera/liviana', back: 'lightweight clothing'},
-    {front: 'el impermeable', back: 'raincoat'},
+    {front: 'el impermeable', back: 'raincoat'} */
 ];
 
 let natflashcard= [
     {front: 'la laguna', back: 'lagoon'},
     {front: 'la cueva', back: 'cave'},
     {front: 'la isla', back: 'island'},
-    {front: 'la avalancha de nieve', back: 'avalanche'},
+   /* {front: 'la avalancha de nieve', back: 'avalanche'},
     {front: 'el canon', back: 'canyon'},
     {front: 'el cerro', back: 'hill'},
     {front: 'el ciclon', back: 'cyclone/tornado'},
@@ -242,22 +260,16 @@ let natflashcard= [
     {front: 'los truenos', back: 'thunder'},
     {front: 'el valle', back: 'valley'},
     {front: 'el volcan', back: 'volcano'},
-    {front: 'la pradera', back: 'meadow/grassland'},
+    {front: 'la pradera', back: 'meadow/grassland'}, */
 ];
  
 let Front = true;
 var currentIndex1= 0
 var currentIndex2= 0
 var currentIndex3= 0
-
-
-//let currentCard;
-
-
+var currentCard;
 
 flashcards.addEventListener('click', () => {
-
-    let currentCard;
 
     if (screen ==1){
         currentCard = bodyflashcard[currentIndex1];
@@ -267,58 +279,42 @@ flashcards.addEventListener('click', () => {
         currentCard = natflashcard[currentIndex3];
     }
 
-  let word = document.getElementById('word');
+  var word = document.getElementById('word');
   if (Front) {
-    word.textContent = currentCard.front;
-  } else {
     word.textContent = currentCard.back;
+  } else {
+    word.textContent = currentCard.front;
   }
 
   Front = !Front; // toggle between front and back
 });
 
+    var knowNat = 0
+    var knowCloth= 0
+    var knowBod= 0
+
+    var DknowNat = 0
+    var DknowCloth= 0
+    var DknowBod= 0
+
+    let knowPile= []
+    let DknowPile= []
+
+    let end = document.getElementById('end');
+
 sortFlashcards();
 
 
-function sortFlashcards() {
-    let knowBut= document.querySelector('.button.know');
-    let dontBut= document.querySelector('.button.dont-know');
-
-    
-    knowBut.addEventListener('click', () => {
-        //store card in know pile and move onto next card
-        if (screen ==1){
-        currentCard = bodyflashcard[currentIndex1];
-        currentIndex1+= 1
-    } else if (screen== 2) {
-        currentCard = clothflashcard[currentIndex2];
-        currentIndex2+= 1
-    }else if (screen== 3){
-        currentCard = natflashcard[currentIndex3];
-        currentIndex3+= 1
-    }
-
-    });
-
-    dontBut.addEventListener('click', () => {
-        //store card in dontknow pile and move onto next card
-        currentIndex+= 1
-
-    });
-
-
-};
-
- //at the end, show know and dont know pile
-
  //Picture guess
-
- let images= [
+ let natimages= [
   { src: "https://www.w3schools.com/howto/img_nature_wide.jpg", answer: "bosque"},
-
-
-
  ]
+
+ let bodyimages=[]
+ let clothimages=[]
+
+
+
 
  let currentImage= 0
 
@@ -326,7 +322,7 @@ function sortFlashcards() {
  let feedback = document.getElementById('feedback');
  
  let guess= document.getElementById('answer')
- let saveBut= document.getElementById('.button.enter')
+ let saveBut= document.querySelector('.button.enter')
 
   pic.src = images[currentImage].src;
   //feedback.textContent = '';
@@ -337,13 +333,96 @@ function sortFlashcards() {
     if(guess.value.toLowerCase() == correct.toLowerCase()) {
     feedback.textContent= "Correct"
   } else{
-     feedback.textContent= "Incorrect"
+     feedback.textContent= `Incorrect. The correct answer is: ${correct}`
+
   }
 
   currentImage += 1
 
 
   })
+
+
+
+
+
+
+  /*Functions*/
+
+  function theEnd(){
+
+    if (currentIndex1 >= bodyflashcard.length){
+        flashcards.style.display= 'none'
+        word.textContent=  ''
+        end.textContent= `The End. You got ${knowBod} correct and ${DknowBod} incorrect.`
+    }else if (currentIndex2 >= clothflashcard.length){
+        flashcards.style.display= 'none'
+        word.textContent= ''
+        end.textContent= `The End. You got ${knowCloth} correct and ${DknowCloth} incorrect.`
+    } else if (currentIndex3 >= natflashcard.length){
+        flashcards.style.display= 'none'
+        word.textContent= ''
+        end.textContent= `The End. You got ${knowNat} correct and ${DknowNat} incorrect.`
+    }
+}
+
+
+function sortFlashcards() {
+
+    let knowBut= document.querySelector('.button.know');
+    let dontBut= document.querySelector('.button.dont-know');
+
+    
+    knowBut.addEventListener('click', () => {
+        //store card in know pile and move onto next card
+        if (screen ==1){
+        currentCard = bodyflashcard[currentIndex1];
+        currentIndex1+= 1
+        knowBod+=1
+        knowPile.push(currentCard);
+        
+    } else if (screen== 2) {
+        currentCard = clothflashcard[currentIndex2];
+        currentIndex2+= 1
+        knowCloth+= 1
+        knowPile.push(currentCard);
+    }else if (screen== 3){
+        currentCard = natflashcard[currentIndex3];
+        currentIndex3+= 1
+        knowNat+= 1
+        knowPile.push(currentCard);
+    }
+
+    theEnd()
+
+    });
+
+    dontBut.addEventListener('click', () => {
+        //store card in dontknow pile and move onto next card
+         if (screen ==1){
+        currentCard = bodyflashcard[currentIndex1];
+        currentIndex1 += 1;
+        DknowBod+=1
+        DknowPile.push(currentCard)
+    } else if (screen== 2) {
+        currentCard = clothflashcard[currentIndex2];
+        currentIndex2+= 1
+        DknowCloth+=1
+        DknowPile.push(currentCard)
+    }else if (screen== 3){
+        currentCard = natflashcard[currentIndex3];
+        currentIndex3+= 1
+        DknowNat+=1
+        DknowPile.push(currentCard)
+    }
+
+    theEnd()
+
+
+    });
+
+};
+
 
   
  
