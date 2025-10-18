@@ -1,4 +1,5 @@
 //WHAT TO DO: make flash cards and add info to them
+
 var screen = 0
 
 let element = document.getElementById('Text');
@@ -26,7 +27,6 @@ let natMatchBut= document.querySelector('.button.match-nat');
 
 
 //Body Category
-
 bodyBut.addEventListener('click', () => {
     bodyFlashBut.style.display= 'inline-block';
     bodyMatchBut.style.display= 'inline-block';
@@ -58,7 +58,6 @@ bodyMatchBut.addEventListener('click', () => {
 
 
 //Clothes Category
-
 clothBut.addEventListener('click', () => {
     clothFlashBut.style.display= 'inline-block';
     clothMatchBut.style.display= 'inline-block';
@@ -90,7 +89,6 @@ clothMatchBut.addEventListener('click', () => {
 
 
 //Nature Category
-
 natBut.addEventListener('click', () => {
     natFlashBut.style.display= 'inline-block';
     natMatchBut.style.display= 'inline-block';
@@ -155,7 +153,7 @@ backBut.addEventListener('click', () => {
     screen= 0
 })
 
-//flashcards
+/*Flashcards*/
 
 let flashcards= document.getElementById('flashcards');
 
@@ -197,7 +195,7 @@ let clothflashcard= [
     {front: 'los zapatos', back: 'shoes'},
     {front: 'la camiseta', back: 't-shirt'},
   /*  {front: 'el abrigo', back: 'coat'},
-    {front: 'la bolsa', back: 'purse'},
+    {front: 'la blusa', back: 'blouse'},
     {front: 'las botas', back: 'boots'},
     {front: 'los calcetines', back: 'socks'},
     {front: 'la camisa', back: 'shirt'},
@@ -219,6 +217,11 @@ let clothflashcard= [
     {front: 'la prenda', back: 'article of clothing'},
     {front: 'los pantalones de trekking', back: 'hiking pants'},
     {front: 'la ropa (ligera/liviana', back: 'lightweight clothing'},
+    {front: 'los pantalones', back: 'pants'},
+    {front: 'la gorra', back: 'hat'},
+    {front: 'las gafas de sol', back: 'sunglasses'},
+    {front: 'el vestido', back: 'dress'},
+    {front: 'la falda', back: 'skirt'}
     {front: 'el impermeable', back: 'raincoat'} */
 ];
 
@@ -260,6 +263,10 @@ let natflashcard= [
     {front: 'los truenos', back: 'thunder'},
     {front: 'el valle', back: 'valley'},
     {front: 'el volcan', back: 'volcano'},
+    {front: 'el arbol', back: 'tree'},
+    {front: 'la planta', back: 'plant'},
+    {front: 'la flor', back: 'flower'},
+    {front: 'el bosque', back: 'forest'},
     {front: 'la pradera', back: 'meadow/grassland'}, */
 ];
  
@@ -282,8 +289,11 @@ flashcards.addEventListener('click', () => {
   var word = document.getElementById('word');
   if (Front) {
     word.textContent = currentCard.back;
+    flashcards.style.backgroundColor= '#F5FFFA'
   } else {
     word.textContent = currentCard.front;
+    flashcards.style.backgroundColor= '#F8F8FF'
+
   }
 
   Front = !Front; // toggle between front and back
@@ -302,16 +312,39 @@ flashcards.addEventListener('click', () => {
 
     let end = document.getElementById('end');
 
-sortFlashcards();
+    sortFlashcards();
 
 
- //Picture guess
- let natimages= [
-  { src: "https://www.w3schools.com/howto/img_nature_wide.jpg", answer: "bosque"},
+ 
+
+/*Picture guess */
+
+ let images= [
+  { src: "https://www.w3schools.com/howto/img_nature_wide.jpg", alt:"forest", answer: "el bosque"},
+  { src: "https://t4.ftcdn.net/jpg/02/80/18/35/240_F_280183529_80oEb7a26WRESlCrV5GtsjQM2APA27T1.jpg", alt:"eye", answer: "el ojo"},
+  { src: "https://as1.ftcdn.net/v2/jpg/02/67/69/20/1000_F_267692011_3dKIcmJqtOOSMCq7HXE3OPUckOIJk3pd.jpg", alt:"mouth", answer: "la boca"},
+  { src: "https://as1.ftcdn.net/v2/jpg/02/92/67/58/1000_F_292675875_Vd84ZrymQvFh8lWXzDEo5U2A4VjGh8b2.jpg", alt:"head", answer: "la cabeza"},
+  { src: "https://images.unsplash.com/photo-1586710743237-1eb35c3c881c?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=387", alt:"arm", answer: "el brazo"},
+  { src: "https://as1.ftcdn.net/v2/jpg/02/98/91/16/1000_F_298911650_pUELMn3JHrxhFwOMVpZrn7zQbRzoy2Ld.jpg", alt:"finger", answer: "el dedo"},
+  { src: "https://www.sosbones.com/media/eb2dplym/back-pain-from-sos.jpg", alt:"back", answer: "la espalda"},
+  { src: "https://as1.ftcdn.net/jpg/00/62/23/30/1000_F_62233042_HlVDQhZuw1XQtbZoSz8WUHIEBSghvOe3.jpg", alt:"nose", answer: "la nariz"},
+  { src: "https://cdn.mos.cms.futurecdn.net/mhJ2yWNwMtNcmijZqVEDDW-440-80.jpg.webp", alt:"hand", answer: "la mano"},
+  { src: "https://cdn.mos.cms.futurecdn.net/NvekX9tT7peSEUHRersaT8-970-80.jpg.webp", alt:"ear", answer: "la oreja/el oido"},
+  { src: "https://c7.alamy.com/comp/2C6YAN1/human-feet-silhouette-icon-stylized-hand-drawn-footprints-isolated-vector-illustration-logo-design-element-2C6YAN1.jpg", alt:"foot", answer: "el pie"},
+  { src: "https://c7.alamy.com/comp/2C6YAN1/human-feet-silhouette-icon-stylized-hand-drawn-footprints-isolated-vector-illustration-logo-design-element-2C6YAN1.jpg", alt:"leg", answer: "la pierna"},
+  { src: "https://assets.yourpractice.online/2259/3d-images/knee-effusion.jpg", alt:"knee", answer: "la rodilla"},
+  { src: "https://orthoinfo.aaos.org/contentassets/690894f0f45d4afcb789bfb806a7fa59/a00410f01_emc-04-8b4-10-fig01-kh-compressor.jpg", alt:"neck", answer: "el cuello"},
+  { src: "https://media.istockphoto.com/id/504033435/photo/male-hand-sign-with-thumb-up-isolated.jpg?s=1024x1024&w=is&k=20&c=PAEeDzqHXZNtCOJ9pIqDjbyUcI3zPkmxsLVk3TsIZr4=", alt:"thumb", answer: "el pulgar"},
+  { src: "https://stgaccinwbsdevlrs01.blob.core.windows.net/newcorporatewbsite/blogs/october2023/detail-main-Left-Side-Chest-Pain.jpeg?w=1920&q=75", alt:"chest", answer: "el pecho"},
+  { src: "https://sa1s3optim.patientpop.com/assets/images/provider/photos/2752014.jpeg", alt:"shoulder", answer: "el hombro"},
+  { src: "https://media.hswstatic.com/eyJidWNrZXQiOiJjb250ZW50Lmhzd3N0YXRpYy5jb20iLCJrZXkiOiJnaWZcL2xpcHMtZGlmZmVyZW50LXNraW4tMS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjI5MH0sInRvRm9ybWF0IjoiYXZpZiJ9fQ==", alt:"lips", answer: "los labios"},
+  { src: "https://sa1s3optim.patientpop.com/assets/images/provider/photos/1859711.jpg", alt:"hip", answer: "la cadera"},
+  { src: "https://www.pngarts.com/files/10/Eyebrows-Transparent-Image.png", alt:"eyebrow", answer: "la ceja"},
+
  ]
 
- let bodyimages=[]
- let clothimages=[]
+ //let bodyimages=[]
+ //let clothimages=[]
 
 
 
@@ -325,22 +358,49 @@ sortFlashcards();
  let saveBut= document.querySelector('.button.enter')
 
   pic.src = images[currentImage].src;
-  //feedback.textContent = '';
+  pic.alt = images[currentImage].alt;
+  feedback.textContent = ''
+
+
+  let nextBut= document.querySelector('.button.next')
+
+  
 
   saveBut.addEventListener('click',() =>{
     let correct = images[currentImage].answer;
 
-    if(guess.value.toLowerCase() == correct.toLowerCase()) {
+    if(guess.value.toLowerCase() == correct.toLowerCase()) {  
     feedback.textContent= "Correct"
+    nextBut.style.display= "block"  
+    nextBut.addEventListener('click', () => {
+    currentImage+= 1
+    pic.src+= 1
+    pic.alt+= 1
+    nextBut.style.display= "none"
+    feedback.textContent = ''
+  })
+    
   } else{
-     feedback.textContent= `Incorrect. The correct answer is: ${correct}`
-
+    feedback.textContent= `Incorrect. The correct answer is: ${correct}`
+    nextBut.style.display= "block"  
+    nextBut.addEventListener('click', () => {
+    currentImage+= 1
+    pic.src += 1
+    pic.alt+= 1
+    nextBut.style.display= "none"
+    feedback.textContent = ''
+  })
   }
 
-  currentImage += 1
-
-
   })
+
+  //FIX THIS
+
+  if(currentImage >= images.length) {
+    Image.style.display= 'none'
+  }
+
+
 
 
 
@@ -422,6 +482,8 @@ function sortFlashcards() {
     });
 
 };
+
+
 
 
   
