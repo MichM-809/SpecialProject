@@ -9,9 +9,11 @@ I am in a spanish class so I make this project for myself to help me practice my
 # resources used
 
 SPAINISH
+
 VHL central: Experiencias 2nd Edition Beginning Spanish
 
 PICTURE LINKS
+
 https://t4.ftcdn.net/jpg/02/80/18/35/240_F_280183529_80oEb7a26WRESlCrV5GtsjQM2APA27T1.jpg
 https://as1.ftcdn.net/v2/jpg/02/67/69/20/1000_F_267692011_3dKIcmJqtOOSMCq7HXE3OPUckOIJk3pd.jpg
 https://as1.ftcdn.net/v2/jpg/02/92/67/58/1000_F_292675875_Vd84ZrymQvFh8lWXzDEo5U2A4VjGh8b2.jpg
