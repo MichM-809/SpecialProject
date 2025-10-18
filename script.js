@@ -161,7 +161,7 @@ let bodyflashcard= [
     {front: 'el ojo', back: 'eye'},
     {front: 'la boca', back: 'mouth'},
     {front: 'la cabeza', back: 'head'},
-    /*{front: 'el brazo', back: 'arm'},
+    {front: 'el brazo', back: 'arm'},
     {front: 'el dedo', back: 'finger'},
     {front: 'la espalda', back: 'back'},
     {front: 'los hombros', back: 'shoulders'},
@@ -187,14 +187,14 @@ let bodyflashcard= [
     {front: 'el tobillo', back: 'ankle'},
     {front: 'la pantorrilla', back: 'calf'},
     {front: 'el pulgar', back: 'thumb'},
-    {front: 'el antebrazo', back: 'forearm'}, */
+    {front: 'el antebrazo', back: 'forearm'}
 ];
 
 let clothflashcard= [
     {front: 'la ropa', back: 'clothes'},
     {front: 'los zapatos', back: 'shoes'},
     {front: 'la camiseta', back: 't-shirt'},
-  /*  {front: 'el abrigo', back: 'coat'},
+    {front: 'el abrigo', back: 'coat'},
     {front: 'la blusa', back: 'blouse'},
     {front: 'las botas', back: 'boots'},
     {front: 'los calcetines', back: 'socks'},
@@ -221,15 +221,15 @@ let clothflashcard= [
     {front: 'la gorra', back: 'hat'},
     {front: 'las gafas de sol', back: 'sunglasses'},
     {front: 'el vestido', back: 'dress'},
-    {front: 'la falda', back: 'skirt'}
-    {front: 'el impermeable', back: 'raincoat'} */
+    {front: 'la falda', back: 'skirt'},
+    {front: 'el impermeable', back: 'raincoat'} 
 ];
 
 let natflashcard= [
     {front: 'la laguna', back: 'lagoon'},
     {front: 'la cueva', back: 'cave'},
     {front: 'la isla', back: 'island'},
-   /* {front: 'la avalancha de nieve', back: 'avalanche'},
+    {front: 'la avalancha de nieve', back: 'avalanche'},
     {front: 'el canon', back: 'canyon'},
     {front: 'el cerro', back: 'hill'},
     {front: 'el ciclon', back: 'cyclone/tornado'},
@@ -267,7 +267,7 @@ let natflashcard= [
     {front: 'la planta', back: 'plant'},
     {front: 'la flor', back: 'flower'},
     {front: 'el bosque', back: 'forest'},
-    {front: 'la pradera', back: 'meadow/grassland'}, */
+    {front: 'la pradera', back: 'meadow/grassland'}
 ];
  
 let Front = true;
@@ -296,7 +296,7 @@ flashcards.addEventListener('click', () => {
 
   }
 
-  Front = !Front; // toggle between front and back
+  Front = !Front; 
 });
 
     var knowNat = 0
@@ -319,8 +319,9 @@ flashcards.addEventListener('click', () => {
 
 /*Picture guess */
 
- let images= [
-  { src: "https://www.w3schools.com/howto/img_nature_wide.jpg", alt:"forest", answer: "el bosque"},
+ let images= []
+
+ let bodyimages=[
   { src: "https://t4.ftcdn.net/jpg/02/80/18/35/240_F_280183529_80oEb7a26WRESlCrV5GtsjQM2APA27T1.jpg", alt:"eye", answer: "el ojo"},
   { src: "https://as1.ftcdn.net/v2/jpg/02/67/69/20/1000_F_267692011_3dKIcmJqtOOSMCq7HXE3OPUckOIJk3pd.jpg", alt:"mouth", answer: "la boca"},
   { src: "https://as1.ftcdn.net/v2/jpg/02/92/67/58/1000_F_292675875_Vd84ZrymQvFh8lWXzDEo5U2A4VjGh8b2.jpg", alt:"head", answer: "la cabeza"},
@@ -340,31 +341,63 @@ flashcards.addEventListener('click', () => {
   { src: "https://media.hswstatic.com/eyJidWNrZXQiOiJjb250ZW50Lmhzd3N0YXRpYy5jb20iLCJrZXkiOiJnaWZcL2xpcHMtZGlmZmVyZW50LXNraW4tMS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjI5MH0sInRvRm9ybWF0IjoiYXZpZiJ9fQ==", alt:"lips", answer: "los labios"},
   { src: "https://sa1s3optim.patientpop.com/assets/images/provider/photos/1859711.jpg", alt:"hip", answer: "la cadera"},
   { src: "https://www.pngarts.com/files/10/Eyebrows-Transparent-Image.png", alt:"eyebrow", answer: "la ceja"},
-
  ]
-
- //let bodyimages=[]
- //let clothimages=[]
+ let clothimages=[
+    { src: "https://www.shutterstock.com/shutterstock/photos/1815121379/display_1500/stock-photo-red-sports-shoes-sneakers-with-white-laces-1815121379.jpg", alt:"shoes", answer: "los zapatos"},
+    { src: "https://cdni.llbean.net/is/image/wim/227260_1123_41?hei=804&wid=700&resMode=sharp2&defaultImage=llbprod/227260_1123_41", alt:"coat", answer: "el abrigo"},
+    { src: "https://i5.walmartimages.com/seo/George-Unisex-General-Purpose-Rubber-Rain-Work-Boot_acb53a36-5161-43ff-b6d1-51ea065662d0.2d1c4c4018fb9f5d28b4dc891607bc19.jpeg?odnHeight=573&odnWidth=573&odnBg=FFFFFF", alt:"boots", answer: "las botas"},
+    { src: "https://mpdenmark.com/cdn/shop/files/10_77194_0_2126.jpg?v=1739434039&width=800", alt:"socks", answer: "los calcetines"},
+    { src: "https://www.tannergoods.com/cdn/shop/products/Standard-Belt-Black-Front.jpg?v=1648152389&width=823", alt:"belt", answer: "el cinturon"},
+    { src: "https://media.istockphoto.com/id/1369338313/vector/icon-of-tie.jpg?s=1024x1024&w=is&k=20&c=kaSukJLunVKnDQigI0J9FU7aDUDcsZzcnNp2bN5pReQ=", alt:"tie", answer: "la corbata"},
+    { src: "https://media.istockphoto.com/id/873985780/vector/suit-icon-isolated-on-white-background.jpg?s=1024x1024&w=is&k=20&c=oM-BXhfrBIv6vR0CkzTpdf6lnUs-ZedZj84r-VaJxjw=", alt:"suit", answer: "el traje"},
+    { src: "https://media.istockphoto.com/id/1425070558/vector/hoodie-sweatshirt-vector-isolated-illustration.jpg?s=1024x1024&w=is&k=20&c=aoSuOK4VixMH4-FZlM4gqljUfqLAU5KUGCLWlS8Oa_s=", alt:"hoodie", answer: "la sudadera"},
+    { src: "https://www.shutterstock.com/shutterstock/photos/2512622699/display_1500/stock-vector-a-cartoon-drawing-of-a-striped-orange-sweater-2512622699.jpg", alt:"sweater", answer: "el sueter"},
+    { src: "https://www.shutterstock.com/image-vector/stylish-women-pants-fashion-basic-trousers-2276830317", alt:"pants", answer: "los pantalones"},
+    { src: "https://i5.walmartimages.com/seo/Sandels-For-Women-Sawvnm-Women-s-Ladies-Fashion-Casual-Sandals-Wedges-Shoes-Outdoor-Slippers-on-Clearance_fbfa0d74-c764-4358-86b2-032f01c21d5e.42e4e9dc6f96e91d141ff463543a721c.jpeg?odnHeight=573&odnWidth=573&odnBg=FFFFFF", alt:"sandals", answer: "las sandalias"},
+    { src: "https://i5.walmartimages.com/seo/EnJoCho-Toddler-Kids-Summer-Shorts-Boys-Girls-Solid-Color-Lace-Casual-Shorts-Pockets-Fashion-Beach-Cargo-Pants-Shorts-Children-Casual-Sports-Wear_67fd8d15-7e42-4494-8b7e-6cc711775abc.fa0ef3da950a518e9af4150f30b5b683.jpeg?odnHeight=573&odnWidth=573&odnBg=FFFFFF", alt:"shorts", answer: "los pantalones cortos"},
+    { src: "https://www.creativefabrica.com/wp-content/uploads/2023/01/12/Swimsuit-for-women-Cartoon-drawing-of-s-Graphics-57367835-1-1-580x387.jpg", alt:"bathing suit", answer: "el traje de bano"},
+    { src: "https://media.istockphoto.com/id/1219165217/vector/baseball-cap-isolated-on-white.jpg?s=1024x1024&w=is&k=20&c=XD3estGMzCrM4egEi8OjkmV180uC-bEx2PBCrF7bxx0=", alt:"hat/cap", answer: "la gorra"},
+    { src: "https://heatwavevisual.com/cdn/shop/files/Apollo_Black.jpg?v=1724098835&width=1000", alt:"sunglasses", answer: "las gafas de sol"},
+    { src: "https://as1.ftcdn.net/jpg/09/87/21/64/1000_F_987216422_IbwEYfS6gQEzv1vLZDPgVXn3DYAT75ub.jpg", alt:"dress", answer: "el vestido"},
+    { src: "https://media.istockphoto.com/id/1491788852/vector/summer-womens-skirt.jpg?s=1024x1024&w=is&k=20&c=ZTmI53X4ajG1w00mh3ahmqK39e_bQFUFWPLv9FtBzWg=", alt:"skirt", answer: "la falda"},
+]
+ 
+ let natimages=[
+    { src: "https://www.shutterstock.com/shutterstock/photos/2512462355/display_1500/stock-vector-illustration-of-eucalyptus-tree-isolated-on-white-2512462355.jpg", alt:"tree", answer: "el arbol"},
+    { src: "https://cdn.vectorstock.com/i/1000v/48/06/cute-cartoon-river-scene-vector-10704806.avif", alt:"river", answer: "el rio"},
+    { src: "https://cdn.britannica.com/16/77416-120-6D5A3D41/volcano-Mount-St-Helens-south-eruption-May-18-1980.jpg", alt:"volcano", answer: "el volcan"},
+    { src: "https://images.unsplash.com/photo-1470240731273-7821a6eeb6bd?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=870", alt:"meadow", answer: "la pradera"},
+    { src: "https://as1.ftcdn.net/v2/jpg/01/65/98/62/1000_F_165986202_8ITP2AGw6wVYaZtMHI9ljCTcSCF1jiAh.jpg", alt:"hill", answer: "el cerro"},
+    { src: "https://c7.alamy.com/comp/2D033XY/avalanche-in-city-cartoon-vector-illustration-snow-falling-on-mountainside-snowslide-snow-slip-scene-snowfall-in-mountains-destructive-phenomenon-2D033XY.jpg", alt:"avalanche", answer: "la avalancha de nieve"},
+    { src: "https://cdn.mos.cms.futurecdn.net/CbivdLKKTLVsjak9RDT9J5-970-80.jpg.webp", alt:"desert", answer: "la desierto"},
+    { src: "https://uknow.uky.edu/sites/default/files/styles/uknow_story_image/public/wildfire-1105209_1280%20%281%29.jpg", alt:"forest fire", answer: "el incendio foresto"},
+    { src: "https://media.istockphoto.com/id/478627080/photo/evening-view-of-ama-dablam.jpg?s=1024x1024&w=is&k=20&c=MwRN-zomZ3h8XKwG3ah-Hje8MPOM21cebX5tXO1XAHE=", alt:"mountain", answer: "la montana"},
+    { src: "https://c02.purpledshub.com/uploads/sites/41/2018/07/ad37704c4b870390b6a25ea32c7146d6jpg-bdec485.jpg?w=1410&webp=1", alt:"storm", answer: "la tormenta"},
+    { src: "https://media.istockphoto.com/id/1341996801/vector/cave-opening.jpg?s=1024x1024&w=is&k=20&c=LtGmYSZSnqN5CW4ioCzbihE5VYJnWafLgMzbOzynh94=", alt:"cave", answer: "la cueva"},
+    { src: "https://cdn.vectorstock.com/i/1000v/60/46/tropical-island-cartoon-vector-2606046.avif", alt:"island", answer: "la isla"},
+    { src: "https://media.istockphoto.com/id/1130881910/vector/paint-illustrations-in-the-wild-and-natural.jpg?s=1024x1024&w=is&k=20&c=hVgwspoha1493mwJYIxw-dOc2CE2UdDxLO_syixnaQs=", alt:"forest", answer: "el bosque"},
+    { src: "https://as2.ftcdn.net/v2/jpg/02/83/67/69/1000_F_283676964_muGCzZwHR0iatBKRCmCTqyI1oI6Z9CGm.jpg", alt:"tornado", answer: "el ciclon"},
+    //{ src: "", alt:"", answer: ""},
+ ]
 
 
 
 
  let currentImage= 0
+ let currentPic= 0
 
  let pic = document.getElementById('Image');
  let feedback = document.getElementById('feedback');
  
  let guess= document.getElementById('answer')
  let saveBut= document.querySelector('.button.enter')
+ let nextBut= document.querySelector('.button.next')
 
   pic.src = images[currentImage].src;
-  pic.alt = images[currentImage].alt;
+  pic.alt = images[currentPic].alt;
   feedback.textContent = ''
 
 
-  let nextBut= document.querySelector('.button.next')
-
-  
 
   saveBut.addEventListener('click',() =>{
     let correct = images[currentImage].answer;
@@ -372,38 +405,18 @@ flashcards.addEventListener('click', () => {
     if(guess.value.toLowerCase() == correct.toLowerCase()) {  
     feedback.textContent= "Correct"
     nextBut.style.display= "block"  
-    nextBut.addEventListener('click', () => {
-    currentImage+= 1
-    pic.src+= 1
-    pic.alt+= 1
-    nextBut.style.display= "none"
-    feedback.textContent = ''
-  })
     
   } else{
     feedback.textContent= `Incorrect. The correct answer is: ${correct}`
-    nextBut.style.display= "block"  
-    nextBut.addEventListener('click', () => {
-    currentImage+= 1
-    pic.src += 1
-    pic.alt+= 1
-    nextBut.style.display= "none"
-    feedback.textContent = ''
-  })
   }
+  nextBut.style.display= "block"  
 
   })
 
-  //FIX THIS
-
-  if(currentImage >= images.length) {
-    Image.style.display= 'none'
-  }
-
-
-
-
-
+ nextBut.addEventListener('click', () => {
+  currentImage += 1
+  updateImage()
+})
 
 
 
@@ -425,7 +438,6 @@ flashcards.addEventListener('click', () => {
         end.textContent= `The End. You got ${knowNat} correct and ${DknowNat} incorrect.`
     }
 }
-
 
 function sortFlashcards() {
 
@@ -482,6 +494,22 @@ function sortFlashcards() {
     });
 
 };
+
+function updateImage() {
+  if (currentImage < images.length) {
+    pic.src = images[currentImage].src;
+    pic.alt = images[currentImage].alt;
+    feedback.textContent = '';
+    guess.value = '';
+    nextBut.style.display = 'none';
+  } else {
+    pic.style.display = 'none';
+    feedback.textContent = 'The end. ';
+    guess.style.display = 'none';
+    saveBut.style.display = 'none';
+    nextBut.style.display = 'none';
+  }
+}
 
 
 
