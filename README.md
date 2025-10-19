@@ -5,7 +5,7 @@ I am in a spanish class so I make this project for myself to help me practice my
 
 
 
-
+[![Athena Award Badge](https://img.shields.io/endpoint?url=https%3A%2F%2Faward.athena.hackclub.com%2Fapi%2Fbadge)](https://award.athena.hackclub.com?utm_source=readme)
 # resources used
 
 SPAINISH
