@@ -1,12 +1,11 @@
-# SpecialProject
+# LEARN YOUR SPANISH VOCAB
 
-I am in a spanish class so I make this project for myself to help me practice my spanish vocab.
-
-
-
+My project is called "LEARN YOUR SPANISH VOCAB". I am in a spanish class and I am kind of struggling so I make this project for myself to help me practice my spanish vocab. This site has flashcards and a guess the picture game to help me learn my vocab. I used VScode to code everything. I watched youtube video and used W3Schools for inspiration and techniques and my spanish classes online textbook for the spanish words. The hardest thing was adding pictures because I never had to add pictures in my other projects and I knew I needed a lot of pictures. I didn't know how to add pictures so I looked it up on W3Schools. After I did that, the pictures were not loading so I had to find  some more pictures, add the links to a document, and make sure that they all worked. Since, there were a lot of picture it took a long time. Overall, I glad I made this website and it actually is helping me learn my spanish vocab :).
 
 [![Athena Award Badge](https://img.shields.io/endpoint?url=https%3A%2F%2Faward.athena.hackclub.com%2Fapi%2Fbadge)](https://award.athena.hackclub.com?utm_source=readme)
-# resources used
+
+
+# Resources Used
 
 SPAINISH
 
