@@ -1,4 +1,3 @@
-//WHAT TO DO: make flash cards and add info to them
 
 var screen = 0
 
@@ -149,6 +148,23 @@ backBut.addEventListener('click', () => {
 
     knowPile= []
     DknowPile= []
+
+  currentImage1 = 0;
+  currentImage2 = 0;
+  currentImage3 = 0;
+  guess.value = '';
+  feedback.textContent = 'Type "YES" to start';
+  pic.style.display = 'block';
+  guess.style.display = 'inline-block';
+  saveBut.style.display = 'inline-block';
+  nextBut.style.display = 'none';
+
+  correctPile1= 0
+  incorrectPile1= 0
+  correctPile2= 0
+  incorrectPile2= 0
+  correctPile3= 0
+  incorrectPile3= 0
 
     screen= 0
 })
@@ -319,9 +335,8 @@ flashcards.addEventListener('click', () => {
 
 /*Picture guess */
 
- let images= []
-
  let bodyimages=[
+  {src:"no", alt:"Are you ready?", answer: "yes"},
   { src: "https://t4.ftcdn.net/jpg/02/80/18/35/240_F_280183529_80oEb7a26WRESlCrV5GtsjQM2APA27T1.jpg", alt:"eye", answer: "el ojo"},
   { src: "https://as1.ftcdn.net/v2/jpg/02/67/69/20/1000_F_267692011_3dKIcmJqtOOSMCq7HXE3OPUckOIJk3pd.jpg", alt:"mouth", answer: "la boca"},
   { src: "https://as1.ftcdn.net/v2/jpg/02/92/67/58/1000_F_292675875_Vd84ZrymQvFh8lWXzDEo5U2A4VjGh8b2.jpg", alt:"head", answer: "la cabeza"},
@@ -340,9 +355,11 @@ flashcards.addEventListener('click', () => {
   { src: "https://sa1s3optim.patientpop.com/assets/images/provider/photos/2752014.jpeg", alt:"shoulder", answer: "el hombro"},
   { src: "https://media.hswstatic.com/eyJidWNrZXQiOiJjb250ZW50Lmhzd3N0YXRpYy5jb20iLCJrZXkiOiJnaWZcL2xpcHMtZGlmZmVyZW50LXNraW4tMS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjI5MH0sInRvRm9ybWF0IjoiYXZpZiJ9fQ==", alt:"lips", answer: "los labios"},
   { src: "https://sa1s3optim.patientpop.com/assets/images/provider/photos/1859711.jpg", alt:"hip", answer: "la cadera"},
-  { src: "https://www.pngarts.com/files/10/Eyebrows-Transparent-Image.png", alt:"eyebrow", answer: "la ceja"},
+  { src: "https://www.pngarts.com/files/10/Eyebrows-Transparent-Image.png", alt:"eyebrow", answer: "la ceja"}
  ]
+
  let clothimages=[
+    {src:"no", alt:"Are you ready?", answer: "yes"},
     { src: "https://www.shutterstock.com/shutterstock/photos/1815121379/display_1500/stock-photo-red-sports-shoes-sneakers-with-white-laces-1815121379.jpg", alt:"shoes", answer: "los zapatos"},
     { src: "https://cdni.llbean.net/is/image/wim/227260_1123_41?hei=804&wid=700&resMode=sharp2&defaultImage=llbprod/227260_1123_41", alt:"coat", answer: "el abrigo"},
     { src: "https://i5.walmartimages.com/seo/George-Unisex-General-Purpose-Rubber-Rain-Work-Boot_acb53a36-5161-43ff-b6d1-51ea065662d0.2d1c4c4018fb9f5d28b4dc891607bc19.jpeg?odnHeight=573&odnWidth=573&odnBg=FFFFFF", alt:"boots", answer: "las botas"},
@@ -359,10 +376,11 @@ flashcards.addEventListener('click', () => {
     { src: "https://media.istockphoto.com/id/1219165217/vector/baseball-cap-isolated-on-white.jpg?s=1024x1024&w=is&k=20&c=XD3estGMzCrM4egEi8OjkmV180uC-bEx2PBCrF7bxx0=", alt:"hat/cap", answer: "la gorra"},
     { src: "https://heatwavevisual.com/cdn/shop/files/Apollo_Black.jpg?v=1724098835&width=1000", alt:"sunglasses", answer: "las gafas de sol"},
     { src: "https://as1.ftcdn.net/jpg/09/87/21/64/1000_F_987216422_IbwEYfS6gQEzv1vLZDPgVXn3DYAT75ub.jpg", alt:"dress", answer: "el vestido"},
-    { src: "https://media.istockphoto.com/id/1491788852/vector/summer-womens-skirt.jpg?s=1024x1024&w=is&k=20&c=ZTmI53X4ajG1w00mh3ahmqK39e_bQFUFWPLv9FtBzWg=", alt:"skirt", answer: "la falda"},
+    { src: "https://media.istockphoto.com/id/1491788852/vector/summer-womens-skirt.jpg?s=1024x1024&w=is&k=20&c=ZTmI53X4ajG1w00mh3ahmqK39e_bQFUFWPLv9FtBzWg=", alt:"skirt", answer: "la falda"}
 ]
  
  let natimages=[
+    {src:"no", alt:"Are you ready?", answer: "yes"},
     { src: "https://www.shutterstock.com/shutterstock/photos/2512462355/display_1500/stock-vector-illustration-of-eucalyptus-tree-isolated-on-white-2512462355.jpg", alt:"tree", answer: "el arbol"},
     { src: "https://cdn.vectorstock.com/i/1000v/48/06/cute-cartoon-river-scene-vector-10704806.avif", alt:"river", answer: "el rio"},
     { src: "https://cdn.britannica.com/16/77416-120-6D5A3D41/volcano-Mount-St-Helens-south-eruption-May-18-1980.jpg", alt:"volcano", answer: "el volcan"},
@@ -377,14 +395,25 @@ flashcards.addEventListener('click', () => {
     { src: "https://cdn.vectorstock.com/i/1000v/60/46/tropical-island-cartoon-vector-2606046.avif", alt:"island", answer: "la isla"},
     { src: "https://media.istockphoto.com/id/1130881910/vector/paint-illustrations-in-the-wild-and-natural.jpg?s=1024x1024&w=is&k=20&c=hVgwspoha1493mwJYIxw-dOc2CE2UdDxLO_syixnaQs=", alt:"forest", answer: "el bosque"},
     { src: "https://as2.ftcdn.net/v2/jpg/02/83/67/69/1000_F_283676964_muGCzZwHR0iatBKRCmCTqyI1oI6Z9CGm.jpg", alt:"tornado", answer: "el ciclon"},
-    //{ src: "", alt:"", answer: ""},
  ]
 
 
 
 
- let currentImage= 0
- let currentPic= 0
+ var currentImage1= 0
+ var currentImage2= 0
+ var currentImage3= 0
+ var correct;
+
+ var correctPile1= 0
+ var incorrectPile1= 0
+
+ var correctPile2= 0
+ var incorrectPile2= 0
+
+ var correctPile3= 0
+ var incorrectPile3= 0
+
 
  let pic = document.getElementById('Image');
  let feedback = document.getElementById('feedback');
@@ -393,29 +422,62 @@ flashcards.addEventListener('click', () => {
  let saveBut= document.querySelector('.button.enter')
  let nextBut= document.querySelector('.button.next')
 
-  pic.src = images[currentImage].src;
-  pic.alt = images[currentPic].alt;
-  feedback.textContent = ''
+
+ if (screen == 1){
+    pic.src = bodyimages[currentImage1].src;
+    pic.alt = bodyimages[currentImage1].alt;
+ }else if (screen== 2) {
+    pic.src = clothimages[currentImage2].src;
+    pic.alt = clothimages[currentImage2].alt;
+ } else if (screen == 3) {
+    pic.src = natimages[currentImage3].src;
+    pic.alt = natimages[currentImage3].alt;
+ }
 
 
 
   saveBut.addEventListener('click',() =>{
-    let correct = images[currentImage].answer;
-
+    if (screen == 1){
+    correct = bodyimages[currentImage1].answer;
+ }else if (screen== 2) {
+    correct = clothimages[currentImage2].answer;
+ } else if (screen == 3) {
+    correct = natimages[currentImage3].answer;
+ }
     if(guess.value.toLowerCase() == correct.toLowerCase()) {  
     feedback.textContent= "Correct"
-    nextBut.style.display= "block"  
+    nextBut.style.display= "block"
+    if (screen == 1){
+    correctPile1+=1
+  }else if (screen== 2) {
+  correctPile2+=1
+  } else if (screen == 3) {
+  correctPile3+=1
+  } 
     
   } else{
-    feedback.textContent= `Incorrect. The correct answer is: ${correct}`
+    feedback.textContent= `Incorrect. The correct answer is: ${correct}.`
+    nextBut.style.display= "block" 
+    if (screen == 1){
+    incorrectPile1+=1
+ }else if (screen== 2) {
+   incorrectPile2+=1
+ } else if (screen == 3) {
+    incorrectPile3+=1
   }
-  nextBut.style.display= "block"  
-
+}
   })
 
  nextBut.addEventListener('click', () => {
-  currentImage += 1
-  updateImage()
+  if (screen== 1){
+    updateImage1()
+
+  }else if (screen ==2){
+    updateImage2()
+
+  }else if (screen== 3){
+    updateImage3()
+  }
 })
 
 
@@ -495,16 +557,53 @@ function sortFlashcards() {
 
 };
 
-function updateImage() {
-  if (currentImage < images.length) {
-    pic.src = images[currentImage].src;
-    pic.alt = images[currentImage].alt;
+
+function updateImage1() {
+    
+  if (currentImage1 < bodyimages.length) {
+    currentImage1+= 1
+    pic.src = bodyimages[currentImage1].src;
+    pic.alt = bodyimages[currentImage1].alt;
     feedback.textContent = '';
     guess.value = '';
     nextBut.style.display = 'none';
   } else {
     pic.style.display = 'none';
-    feedback.textContent = 'The end. ';
+    feedback.textContent = `The end. You got ${correctPile1} correct and ${incorrectPile1} incorrect.`;
+    guess.style.display = 'none';
+    saveBut.style.display = 'none';
+    nextBut.style.display = 'none';
+  }
+}
+
+function updateImage2() {
+  currentImage2+= 1
+  if (currentImage2 < clothimages.length) {
+    pic.src = clothimages[currentImage2].src;
+    pic.alt = clothimages[currentImage2].alt;
+    feedback.textContent = '';
+    guess.value = '';
+    nextBut.style.display = 'none';
+  } else {
+    pic.style.display = 'none';
+    feedback.textContent = `The end. You got ${correctPile2} correct and ${incorrectPile2} incorrect.`;
+    guess.style.display = 'none';
+    saveBut.style.display = 'none';
+    nextBut.style.display = 'none';
+  }
+}
+
+function updateImage3() {
+  currentImage3+= 1
+  if (currentImage3 < natimages.length) {
+    pic.src = natimages[currentImage3].src;
+    pic.alt = natimages[currentImage3].alt;
+    feedback.textContent = '';
+    guess.value = '';
+    nextBut.style.display = 'none';
+  } else {
+    pic.style.display = 'none';
+    feedback.textContent = `The end. You got ${correctPile3} correct and ${incorrectPile3} incorrect.`;
     guess.style.display = 'none';
     saveBut.style.display = 'none';
     nextBut.style.display = 'none';
